@@ -3,8 +3,12 @@
 use App\Http\Controllers\ProfileController; // 居場所を指定しておくと読み解きに便利
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\BookController; //追加
-use App\Models\Book; //追加
+use App\Http\Controllers\JobController;
+use App\Models\Job;
+
+//写経用
+// use App\Http\Controllers\BookController;
+// use App\Models\Book;
 
 
 /*

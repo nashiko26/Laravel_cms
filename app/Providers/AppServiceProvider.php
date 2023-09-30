@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\URL;    //この行を追加
 
@@ -25,5 +26,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
     URL::forceScheme('https');          //強制で発行されるURLをhttpsに//
+    Schema::defaultStringLength(191);    // migrateでテーブルが存在したらスキップする
     }
 }
