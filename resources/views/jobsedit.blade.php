@@ -1,10 +1,10 @@
-<!-- resources/views/booksedit.blade.php -->
+<!-- resources/views/jobsedit.blade.php -->
 <x-app-layout>
 
     <!--ヘッダー[START]-->
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            <form action="{{ route('book_index') }}" method="GET" class="w-full max-w-lg">
+            <form action="{{ route('job_index') }}" method="GET" class="w-full max-w-lg">
                 <x-button class="bg-gray-100 text-gray-900">{{ __('Dashboard') }}：更新画面</x-button>
             </form>
         </h2>
@@ -29,37 +29,37 @@
 
 
             <!-- 本のタイトル -->
-            <form action="{{ url('books/update') }}" method="POST" class="w-full max-w-lg">
+            <form action="{{ url('jobs/update') }}" method="POST" class="w-full max-w-lg">
                 @csrf
                 
                   <div class="flex flex-col px-2 py-2">
                    <!-- カラム１ -->
                     <div class="w-full md:w-1/1 px-3 mb-2 md:mb-0">
                       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-                       Book Name
+                       job Name
                       </label>
-                      <input name="item_name" value="{{$book->item_name}}" class="appearance-none block w-full text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="">
+                      <input name="item_name" value="{{$job->item_name}}" class="appearance-none block w-full text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="">
                     </div>
                     <!-- カラム２ -->
                     <div class="w-full md:w-1/1 px-3">
                       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                         金額
                       </label>
-                      <input name="item_amount" value="{{$book->item_amount}}" class="appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="">
+                      <input name="item_amount" value="{{$job->item_amount}}" class="appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="">
                     </div>
                     <!-- カラム３ -->
                     <div class="w-full md:w-1/1 px-3 mb-2 md:mb-0">
                       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                         数
                       </label>
-                      <input name="item_number" value="{{$book->item_number}}" class="appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="">
+                      <input name="item_number" value="{{$job->item_number}}" class="appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="">
                     </div>
                     <!-- カラム４ -->
                     <div class="w-full md:w-1/1 px-3 mb-6 md:mb-0">
                       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                         発売日
                       </label>
-                      <input name="published" type="datetime-local" value="{{$book->published}}" class="appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  placeholder="">
+                      <input name="published" type="datetime-local" value="{{$job->published}}" class="appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  placeholder="">
                     </div>
                   </div>
                   <!-- カラム５ -->
@@ -69,7 +69,7 @@
                       </div>
                    </div>
                 <!-- id値を送信 -->
-                <input type="hidden" name="id" value="{{$book->id}}">
+                <input type="hidden" name="id" value="{{$job->id}}">
                 <!--/ id値を送信 -->
             </form>
         </div>

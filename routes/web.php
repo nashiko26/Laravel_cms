@@ -22,29 +22,27 @@ use App\Models\Job;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
-//本：ダッシュボード表示(books.blade.php)
-Route::get('/', [BookController::class,'index'])->middleware(['auth'])->name('book_index');
-Route::get('/dashboard', [BookController::class,'index'])->middleware(['auth'])->name('dashboard');
+//Jobb Artist：ダッシュボード表示(jobs.blade.php)
+Route::get('/', [JobController::class,'index'])->middleware(['auth'])->name('job_index');
+Route::get('/dashboard', [JobController::class,'index'])->middleware(['auth'])->name('dashboard');
 
-//本：追加 
-Route::post('/books',[BookController::class,"store"])->name('book_store');
+//求人登録処理
+Route::post('/jobs',[JobController::class,"store"])->name('job_store');
 
-//本：削除 
-Route::delete('/book/{book}', [BookController::class,"destroy"])->name('book_destroy');
+//削除 
+Route::delete('/job/{job}', [JobController::class,"destroy"])->name('job_destroy');
 
-//本：更新画面
-Route::post('/booksedit/{book}',[BookController::class,"edit"])->name('book_edit'); //通常
-Route::get('/booksedit/{book}', [BookController::class,"edit"])->name('edit');      //Validationエラーありの場合
+//更新画面
+Route::post('/jobsedit/{job}',[JobController::class,"edit"])->name('jobs_edit'); //通常
+Route::get('/jobsedit/{job}', [JobController::class,"edit"])->name('edit');      //Validationエラーありの場合
 
-//本：更新画面
-Route::post('/books/update',[BookController::class,"update"])->name('book_update');
-
-
+//更新画面
+Route::post('/jobs/update',[JobController::class,"update"])->name('jobs_update');
 
 
 

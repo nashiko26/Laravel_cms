@@ -31,14 +31,7 @@
                 <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">{{ __('記憶させておく') }}</span>
             </label>
         </div>
-
         <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                    {{ __('パスワードを忘れましたか？') }}
-                </a>
-            @endif
-
             <x-primary-button class="ml-3">
                 {{ __('ログイン') }}
             </x-primary-button>
@@ -46,16 +39,17 @@
     </form>
 </x-guest-layout>
 
-<!-- 以下を追加 -->
 @if (Route::has('login'))
     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
         @auth
-            <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
+        <!-- 認証されていたらTOP-->
+            <a href="{{ url('/') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">管理画面</a>
         @else
-            <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+        <!-- そうでなければloginリンクを表示-->
+            <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">ログイン</a>
 
             @if (Route::has('register'))
-                <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">新規登録</a>
             @endif
         @endauth
     </div>
