@@ -18,11 +18,12 @@
         <!-- バリデーションエラーの表示に使用-->
     
     <!--全エリア[START]-->
-    <div class="flex" style="background-color: #dacd6b;">
+    <div class="flex justify-between" style="background-color: #dacd6b;">
+    <!--<div class="flex" style="background-color: #dacd6b;">-->
     <!--<div class="flex bg-gray-100">-->
 
         <!--左エリア[START]--> 
-        <div class="w-1/2 text-gray-700 text-left px-4 py-4 m-2">
+        <div class="text-gray-700 text-left px-4 py-4 m-2">
             
             <!-- 求人情報フォーム -->
             <form action="{{ url('jobs') }}" method="POST" class="w-full max-w-lg">
@@ -76,8 +77,8 @@
     
     
         <!--右エリア[START]-->
-            <div class="w-1/2 flex-1 text-gray-700 text-left bg-gray-100 px-4 py-2 m-2">
-
+            <div class="max-w-xl text-gray-700 text-left bg-gray-100 px-4 py-2 m-2">
+            <!--<div class="flex-1 text-gray-700 text-left bg-glay-100 px-4 py-2 m-2">-->
                  <!-- 現在の求人 -->
                 @if (count($jobs) > 0)
                     @foreach ($jobs as $job)
